@@ -17,18 +17,18 @@ class HomeModule extends ChildModule {
   @override
   List<Bind> get binds => [
     //domain
-    Bind<GetCharacter>((i) => GetCharacter(i(), i())),
+    Bind<GetCharacter>((i) => GetCharacter(i()!, i()!)),
 
     //infra
-    Bind<IHomeRepository>((i) => HomeRepository(i())),
-    Bind<IConnectivityService>((i) => ConnectivityService(i())),
+    Bind<IHomeRepository>((i) => HomeRepository(i()!)),
+    Bind<IConnectivityService>((i) => ConnectivityService(i()!)),
 
     //external
     Bind<IHomeDatasource>((i) => HomeDatasouce()),
-    Bind<IConnectivityDriver>((i) => FlutterConnectivityDriver(i())),
+    Bind<IConnectivityDriver>((i) => FlutterConnectivityDriver(i()!)),
 
     //presenter
-    Bind((i) => HomeController(i()))
+    Bind((i) => HomeController(i()!))
       ];
 
   @override

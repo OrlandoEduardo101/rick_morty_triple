@@ -1,6 +1,6 @@
 class OriginEntity {
-  String name;
-  String url;
+  String? name;
+  String? url;
 
   OriginEntity({this.name, this.url});
 

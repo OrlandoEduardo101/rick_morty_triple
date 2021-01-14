@@ -1,17 +1,15 @@
 import 'dart:convert';
-
-import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:rick_morty_triple/app/modules/home/domain/errors/error.dart';
 import 'package:rick_morty_triple/app/modules/home/external/datasources/home_datasource.dart';
 import 'package:rick_morty_triple/app/modules/home/infra/model/character_model.dart';
 
-class DioMock extends Mock implements Dio {}
+/*class DioMock extends Mock implements Dio {}
 
 main() {
   final dio = DioMock();
-  final datasource = HomeDatasouce(dio);
+  final datasource = HomeDatasouce();
 
   test('Deve retornar uma lista', () async {
     when(dio.get(any, options: anyNamed('options')))
@@ -25,7 +23,7 @@ main() {
     var result = datasource.getCharacters();
     expect(result, throwsA(isA<ConnectionError>()));
   });
-}
+}*/
 
 var response = '''
 {

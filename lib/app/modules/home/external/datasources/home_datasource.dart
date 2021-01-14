@@ -13,6 +13,7 @@ class HomeDatasouce implements IHomeDatasource {
   HomeDatasouce();
   @override
   Future<List<CharacterModel>> getCharacters() async {
+    
     var _response;
     HttpClient client = HttpClient();
     try {
@@ -27,6 +28,7 @@ class HomeDatasouce implements IHomeDatasource {
   }, onDone: () => completer.complete(contents.toString()));
 
       _response = await completer.future;
+
     } catch (e) {
       throw ConnectionError(message: 'erro ao buscar dados');
     }

@@ -1,5 +1,4 @@
 import 'package:connectivity/connectivity.dart';
-import 'package:dio/dio.dart';
 
 import 'app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -12,7 +11,7 @@ class AppModule extends MainModule {
   List<Bind> get binds => [
         Bind((i) => AppController()),
         Bind((i) => Connectivity()),
-        Bind((i) => Dio(BaseOptions(baseUrl: 'https://rickandmortyapi.com/api')))
+        //Bind((i) => Dio(BaseOptions(baseUrl: 'https://rickandmortyapi.com/api')))
       ];
 
   @override

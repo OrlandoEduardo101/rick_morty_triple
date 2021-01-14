@@ -18,7 +18,7 @@ class GetCharacter implements IGetCharacter {
     var result = await service.isOnline();
 
     if (result.isLeft()) {
-      return result.map((r) => null);
+      return  Left((ConnectionError(message: 'Sem conexão')));
     }
 
     return await repository.getCharacters();

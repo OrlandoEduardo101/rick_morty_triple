@@ -5,7 +5,7 @@ import 'package:rick_morty_triple/app/modules/home/domain/entities/character_ent
 import 'package:rick_morty_triple/app/modules/home/domain/entities/origin_entity.dart';
 
 class CharacterModel extends CharacterEntity {
-  CharacterModel({int id, String name, String status, String species, String type, String gender, OriginEntity origin, OriginEntity location, String image, List<String> episode, String url, String created}) : super(id: id, name: name, status: status, species: species, type: type, gender: gender, origin: origin, location: location, image: image, episode: episode, url: url, created: created);
+  CharacterModel({int? id, String? name, String? status, String? species, String? type, String? gender, OriginEntity? origin, OriginEntity? location, String? image, List<String>? episode, String? url, String? created}) : super(id: id, name: name, status: status, species: species, type: type, gender: gender, origin: origin, location: location, image: image, episode: episode, url: url, created: created);
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -24,7 +24,8 @@ class CharacterModel extends CharacterEntity {
   }
 
   factory CharacterModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
+    // ignore: unnecessary_null_comparison
+    if (map == null) return CharacterModel();
   
     return CharacterModel(
       id: map['id'],
