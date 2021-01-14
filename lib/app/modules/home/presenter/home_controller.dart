@@ -12,8 +12,8 @@ class HomeController extends MobXStore<HomeFailure, List<CharacterModel>> {
     getChar();
   }
 
-  final listChar = Observable(<CharacterModel>[]);
-  late final fetchChar = Action(_fetchChar);
+  //final listChar = Observable(<CharacterModel>[]);
+  //late final fetchChar = Action(_fetchChar);
   var listLocal = <CharacterModel>[];
   var list;
 
@@ -29,7 +29,7 @@ class HomeController extends MobXStore<HomeFailure, List<CharacterModel>> {
     });
   }
 
-  _fetchChar() {
+  fetchChar() {
     setLoading(false);
     if (listLocal.isEmpty) {
       update(list);
@@ -40,9 +40,9 @@ class HomeController extends MobXStore<HomeFailure, List<CharacterModel>> {
 
   setlistSearch(String value) {
     if (value.isNotEmpty) {
-      
+
       state.forEach((element) {
-        if (element.name!.contains(value)) {
+        if (element.name!.toLowerCase().contains(value.toLowerCase())) {
           listLocal.add(element);
         }
       });

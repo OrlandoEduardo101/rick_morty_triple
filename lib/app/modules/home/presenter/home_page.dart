@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 import 'package:rick_morty_triple/app/modules/home/domain/errors/error.dart';
@@ -29,7 +28,7 @@ class _HomePageState extends State<HomePage> {
         ),
         body: ScopedBuilder<HomeController, HomeFailure, List<CharacterModel>>(
             store: controller,
-            
+
             onError: (context, HomeFailure? error) => Center(
               child: Container(
                     child: Text('${error?.message}'),
@@ -41,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                   child: CircularProgressIndicator(),
                 ),
 
-            onState: (_, List state) => Observer(builder: (_) => Center(
+            onState: (_, List state) => Center(
                   // height: MediaQuery.of(context).size.height * 0.86,
                   child: ListView.builder(
                           itemCount: state.length,
@@ -64,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             );
                           }),
-                )))
+                ))
                 
 
     );
