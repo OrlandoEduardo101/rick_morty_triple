@@ -1,7 +1,8 @@
 
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:mockito/mockito.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:rick_morty_triple/app/modules/home/domain/errors/error.dart';
 import 'package:rick_morty_triple/app/modules/home/infra/drivers/connectivity_driver.dart';
 import 'package:rick_morty_triple/app/modules/home/infra/services/connectivity_service.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:mockito/mockito.dart';
 import 'package:rick_morty_triple/app/modules/home/domain/errors/error.dart';
 import 'package:rick_morty_triple/app/modules/home/infra/datasource/login_datasource.dart';

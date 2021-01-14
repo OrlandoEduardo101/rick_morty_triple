@@ -1,4 +1,3 @@
-import 'package:mobx/mobx.dart';
 import 'package:mobx_triple/mobx_triple.dart';
 import 'package:rick_morty_triple/app/modules/home/domain/errors/error.dart';
 import 'package:rick_morty_triple/app/modules/home/domain/usecases/get_character.dart';

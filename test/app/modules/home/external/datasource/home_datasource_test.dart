@@ -1,11 +1,14 @@
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:mockito/mockito.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:dio/dio.dart';
 import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:rick_morty_triple/app/modules/home/domain/errors/error.dart';
 import 'package:rick_morty_triple/app/modules/home/external/datasources/home_datasource.dart';
 import 'package:rick_morty_triple/app/modules/home/infra/model/character_model.dart';
 
-/*class DioMock extends Mock implements Dio {}
+class DioMock extends Mock implements Dio {}
 
 main() {
   final dio = DioMock();
@@ -23,7 +26,7 @@ main() {
     var result = datasource.getCharacters();
     expect(result, throwsA(isA<ConnectionError>()));
   });
-}*/
+}
 
 var response = '''
 {
