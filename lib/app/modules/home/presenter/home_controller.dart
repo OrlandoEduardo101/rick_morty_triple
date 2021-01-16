@@ -1,10 +1,10 @@
-import 'package:mobx_triple/mobx_triple.dart';
+import 'package:flutter_triple/flutter_triple.dart';
 import 'package:rick_morty_triple/app/modules/home/domain/errors/error.dart';
 import 'package:rick_morty_triple/app/modules/home/domain/usecases/get_character.dart';
 import 'package:rick_morty_triple/app/modules/home/infra/model/character_model.dart';
 
 // ignore: must_be_immutable
-class HomeController extends MobXStore<HomeFailure, List<CharacterModel>> {
+class HomeController extends NotifierStore<HomeFailure, List<CharacterModel>> {
   final IGetCharacter _usecase;
 
   HomeController(this._usecase) : super([]) {

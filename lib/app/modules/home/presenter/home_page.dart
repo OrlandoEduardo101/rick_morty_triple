@@ -26,8 +26,8 @@ class _HomePageState extends State<HomePage> {
                 InputDecoration(icon: Icon(Icons.search), hintText: 'Search'),
           ),
         ),
-        body: ScopedBuilder<HomeController, HomeFailure, List<CharacterModel>>(
-            store: controller,
+        body: RxBuilder(
+          /*store: controller,
 
             onError: (context, HomeFailure? error) => Center(
               child: Container(
@@ -63,9 +63,45 @@ class _HomePageState extends State<HomePage> {
                               ),
                             );
                           }),
-                ))
-                
+                ),*/
+          builder: (BuildContext context) {
+            
+            if (controller.isLoading) {
+              return Center(
+                  child: CircularProgressIndicator(),
+                );
+            }
+            
+            /*if (controller.triple.state.isEmpty) {
+              return Center(
+                child: Container(
+                  child: Text('${controller.triple.error?.message}'),
+                  color: Colors.redAccent,
+                ),
+              );
+            }*/
 
-    );
+            return ListView.builder(
+                itemCount: controller.state.length,
+                itemBuilder: (_, index) {
+                  CharacterModel item = controller.state[index];
+                  return Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.grey,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: NetworkImage(item.image!))),
+                        ),
+                      ),
+                      title: Text(item.name!),
+                      subtitle: Text('${item.id}'),
+                    ),
+                  );
+                });
+          },
+        ));
   }
 }
