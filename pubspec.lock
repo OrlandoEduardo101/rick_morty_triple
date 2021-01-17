@@ -350,9 +350,9 @@ packages:
   mobx_triple:
     dependency: "direct main"
     description:
-      path: "../triple_pattern/stores/mobx_triple"
-      relative: true
-    source: path
+      name: mobx_triple
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.0.25"
   mockito:
     dependency: "direct dev"

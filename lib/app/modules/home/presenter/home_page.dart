@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          //leading: Icon(Icons.search),
           title: TextFormField(
             onChanged: controller.setlistSearch,
             decoration:
@@ -28,44 +29,49 @@ class _HomePageState extends State<HomePage> {
         ),
         body: ScopedBuilder<HomeController, HomeFailure, List<CharacterModel>>(
             store: controller,
+            onError: (_, HomeFailure? error) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text('${error?.message}'),
+                backgroundColor: Colors.red[500],
+                
+              ));
+              return Center(
+                child: Icon(Icons.search_off_rounded, size: 150,),
+              );
+            },
 
-            onError: (context, HomeFailure? error) => Center(
+            /* Center(
               child: Container(
                     child: Text('${error?.message}'),
                     color: Colors.redAccent,
                   ),
-            ),
+            ),*/
 
-            onLoading: (context) => Center(
+            onLoading: (_) => Center(
                   child: CircularProgressIndicator(),
                 ),
-
             onState: (_, List state) => Center(
                   // height: MediaQuery.of(context).size.height * 0.86,
                   child: ListView.builder(
-                          itemCount: state.length,
-                          itemBuilder: (_, index) {
-                            CharacterModel item =
-                                controller.state[index];
-                            return Card(
-                              child: ListTile(
-                                leading: CircleAvatar(
-                                  backgroundColor: Colors.grey,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        image: DecorationImage(
-                                            image: NetworkImage(item.image!))),
-                                  ),
-                                ),
-                                title: Text(item.name!),
-                                subtitle: Text('${item.id}'),
+                      itemCount: state.length,
+                      itemBuilder: (_, index) {
+                        CharacterModel item = controller.state[index];
+                        return Card(
+                          child: ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor: Colors.grey,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                        image: NetworkImage(item.image!))),
                               ),
-                            );
-                          }),
-                ))
-                
-
-    );
+                            ),
+                            title: Text(item.name!),
+                            subtitle: Text('${item.id}'),
+                          ),
+                        );
+                      }),
+                )));
   }
 }

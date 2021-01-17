@@ -61,5 +61,3 @@ class HomeController extends MobXStore<HomeFailure, List<CharacterModel>> {
   }
   
 }
-
-enum MyState { state, loading, error }
