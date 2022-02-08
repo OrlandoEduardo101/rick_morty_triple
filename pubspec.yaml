@@ -33,15 +33,15 @@ environment:
   sdk: ">=2.12.0-0 <3.0.0"
 
 dependencies:
-  triple: ">=0.0.26 <1.0.0"
-  flutter_triple: 0.0.27
-  mobx_triple: ^0.0.25
-  connectivity: 3.0.0-nullsafety.3
-  dartz: ^0.10.0-nullsafety.0
+  triple:
+  flutter_triple:
+  mobx_triple:
+  connectivity: 3.0.0
+  dartz: ^0.10.0
   dio: ^3.0.10
-  flutter_mobx: ^2.0.0-nullsafety.0
-  mobx: ^2.0.0-nullsafety.2
-  flutter_modular: ^3.0.0-nullsafety.22
+  flutter_mobx: ^2.0.0
+  mobx: ^2.0.0
+  flutter_modular: 3.0.0-nullsafety.22
   flutter:
     sdk: flutter
   
@@ -51,8 +51,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
 
 dev_dependencies:
-  mockito: ^4.1.3
-  modular_codegen: ^2.1.0
+  mockito:
+  # modular_codegen: ^2.1.0
   #mobx_codegen: ^1.1.2
   build_runner: ^1.10.1
   flutter_test:
