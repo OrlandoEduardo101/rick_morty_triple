@@ -30,15 +30,14 @@ scripts:
 
 
 environment:
-  sdk: ">=2.12.0-0 <3.0.0"
+  sdk: ">=2.12.0 <4.0.0"
 
 dependencies:
   triple:
-  flutter_triple:
-  mobx_triple:
+  flutter_triple: ^2.0.0
   connectivity: 3.0.0
   dartz: ^0.10.0
-  dio: ^3.0.10
+  dio: ^5.2.1+1
   flutter_mobx: ^2.0.0
   mobx: ^2.0.0
   flutter_modular: 3.0.0-nullsafety.22
@@ -54,7 +53,7 @@ dev_dependencies:
   mockito:
   # modular_codegen: ^2.1.0
   #mobx_codegen: ^1.1.2
-  build_runner: ^1.10.1
+  build_runner: ^2.4.6
   flutter_test:
     sdk: flutter
 
